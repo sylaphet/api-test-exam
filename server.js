@@ -12,11 +12,11 @@ const users = {
   2: { name: "Bob", age: 30 },
 };
 
-app.get("/user/:id", (req, res) => {
-  const id = req.params.id;
-  const user = users[id];
-  res.json({ name: user.name, age: user.age });
-});
+app.get("/user/:id", function (req, res) {
+    const id = req.params.id;
+    const user = users[id];
+    res.json({ name: user.name, age: user.age });
+  });
 
 app.post("/user", (req, res) => {
   const { userId, fullName, age } = req.body;
